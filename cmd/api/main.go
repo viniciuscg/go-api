@@ -10,6 +10,6 @@ func main() {
 	}
 
 	log.Println("Starting server on", app.config.addr)
-
-	log.Fatal(app.run())
+	mux := app.mount()
+	log.Fatal(app.run(mux))
 }
